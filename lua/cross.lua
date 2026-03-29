@@ -105,15 +105,15 @@ local function setup_rdbg_adapter(dap)
     end
 
     if config.request == 'attach' and config.bundle == 'bundle' then
-      args = {'-n', '--open', '--port', config.port, '-c', '--', 'bundle', 'exec', config.command, config.script}
+      args = {'-n', '--open', '--port', config.connect, '-c', '--', 'bundle', 'exec', config.command, config.script}
     elseif config.request == 'launch' and config.bundle == 'bundle' then
-      args = {'-n', '--open', '--port', config.port, '-c', '--', 'bundle', 'exec', 'readapt', 'stdio'}
+      args = {'-n', '--open', '--port', config.connect, '-c', '--', 'bundle', 'exec', 'readapt', 'stdio'}
     elseif config.request == 'attach' and config.bundle == 'bundle' and config.rdbg == true then
-      args = {'bundle', 'exec', 'rdbg', '-n', '--open', '--port', config.port, '-c', '--', 'bundle', 'exec', config.command, config.script}
+      args = {'bundle', 'exec', 'rdbg', '-n', '--open', '--port', config.connect, '-c', '--', 'bundle', 'exec', config.command, config.script}
     elseif config.request == 'launch' and config.bundle == 'bundle' and config.rdbg == true then
-      args = {'bundle', 'exec', 'rdbg', '-n', '--open', '--port', config.port, '-c', '--', 'bundle', 'exec', 'readapt', 'stdio'}
+      args = {'bundle', 'exec', 'rdbg', '-n', '--open', '--port', config.connect, '-c', '--', 'bundle', 'exec', 'readapt', 'stdio'}
     else
-      args = {'--open', '--port', config.port, '-c', '--', config.command, config.script}
+      args = {'--open', '--port', config.connect, '-c', '--', config.command, config.script}
     end
 
     local opts = {
