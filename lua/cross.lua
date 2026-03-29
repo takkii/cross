@@ -202,8 +202,12 @@ local function setup_rdbg_configuration(dap)
     request = 'attach',
     command = 'ruby',
     script = "${file}",
-    port = 38698,
-    server = '127.0.0.1',
+    connect = function()
+      local server = vim.fn.input('Server [127.0.0.1]: ')
+      server = server ~= '' and Server or '127.0.0.1'
+      local port = tonumber(vim.fn.input('Port [38698]: ')) or 38698
+      return { server = server, port = port }
+    end;
     options = {
      source_filetype = 'ruby';
     },
@@ -219,8 +223,12 @@ local function setup_rdbg_configuration(dap)
     useBundler = true;
     command = 'ruby',
     script = "${file}",
-    port = 38698,
-    server = '127.0.0.1',
+    connect = function()
+      local server = vim.fn.input('Server [127.0.0.1]: ')
+      server = server ~= '' and Server or '127.0.0.1'
+      local port = tonumber(vim.fn.input('Port [38698]: ')) or 38698
+      return { server = server, port = port }
+    end;
     options = {
      source_filetype = 'ruby';
     },
@@ -234,8 +242,12 @@ local function setup_rdbg_configuration(dap)
     request = 'attach',
     command = 'rake',
     script = "default",
-    port = 38698,
-    server = '127.0.0.1',
+    connect = function()
+      local server = vim.fn.input('Server [127.0.0.1]: ')
+      server = server ~= '' and Server or '127.0.0.1'
+      local port = tonumber(vim.fn.input('Port [38698]: ')) or 38698
+      return { server = server, port = port }
+    end;
     options = {
       source_filetype = 'ruby';
     };
@@ -249,8 +261,12 @@ local function setup_rdbg_configuration(dap)
     request = 'attach',
     command = 'rspec',
     script = "${file}",
-    port = 38698,
-    server = '127.0.0.1',
+    connect = function()
+      local server = vim.fn.input('Server [127.0.0.1]: ')
+      server = server ~= '' and Server or '127.0.0.1'
+      local port = tonumber(vim.fn.input('Port [38698]: ')) or 38698
+      return { server = server, port = port }
+    end;
     options = {
       source_filetype = 'ruby';
     },
@@ -264,8 +280,12 @@ local function setup_rdbg_configuration(dap)
     request = 'attach',
     command = 'rspec',
     script = "${file}",
-    port = 38698,
-    server = '127.0.0.1',
+    connect = function()
+      local server = vim.fn.input('Server [127.0.0.1]: ')
+      server = server ~= '' and Server or '127.0.0.1'
+      local port = tonumber(vim.fn.input('Port [38698]: ')) or 38698
+      return { server = server, port = port }
+    end;
     options = {
      source_filetype = 'ruby';
     };
@@ -280,8 +300,12 @@ local function setup_rdbg_configuration(dap)
     request = 'attach',
     command = 'rspec',
     script = "./spec",
-    port = 38698,
-    server = '127.0.0.1',
+    connect = function()
+      local server = vim.fn.input('Server [127.0.0.1]: ')
+      server = server ~= '' and Server or '127.0.0.1'
+      local port = tonumber(vim.fn.input('Port [38698]: ')) or 38698
+      return { server = server, port = port }
+    end;
     options = {
       source_filetype = 'ruby';
     };
@@ -296,8 +320,12 @@ local function setup_rdbg_configuration(dap)
     program = 'bundle';
     programArgs = {'exec', 'rails', 's'};
     useBundler = true;
-    port = 38698,
-    server = "127.0.0.1",
+    connect = function()
+      local server = vim.fn.input('Server [127.0.0.1]: ')
+      server = server ~= '' and Server or '127.0.0.1'
+      local port = tonumber(vim.fn.input('Port [38698]: ')) or 38698
+      return { server = server, port = port }
+    end;
     options = {
       source_filetype = 'ruby';
     },
@@ -313,8 +341,12 @@ local function setup_rdbg_configuration(dap)
     program = 'bundle';
     programArgs = {'exec', 'rails', 's'};
     useBundler = true;
-    port = 38698,
-    server = "127.0.0.1",
+    connect = function()
+      local server = vim.fn.input('Server [127.0.0.1]: ')
+      server = server ~= '' and Server or '127.0.0.1'
+      local port = tonumber(vim.fn.input('Port [38698]: ')) or 38698
+      return { server = server, port = port }
+    end;
     options = {
       source_filetype = 'ruby';
     },
@@ -328,8 +360,12 @@ local function setup_rdbg_configuration(dap)
     request = 'attach',
     command = 'rackup',
     script = "",
-    port = 38698,
-    server = "127.0.0.1",
+    connect = function()
+      local server = vim.fn.input('Server [127.0.0.1]: ')
+      server = server ~= '' and Server or '127.0.0.1'
+      local port = tonumber(vim.fn.input('Port [38698]: ')) or 38698
+      return { server = server, port = port }
+    end;
     options = {
       source_filetype = 'ruby';
     },
@@ -344,8 +380,12 @@ local function setup_rdbg_configuration(dap)
     request = 'attach',
     command = 'rackup',
     script = "",
-    port = 38698,
-    server = "127.0.0.1",
+    connect = function()
+      local server = vim.fn.input('Server [127.0.0.1]: ')
+      server = server ~= '' and Server or '127.0.0.1'
+      local port = tonumber(vim.fn.input('Port [38698]: ')) or 38698
+      return { server = server, port = port }
+    end;
     options = {
       source_filetype = 'ruby';
     },
@@ -360,8 +400,12 @@ local function setup_rdbg_configuration(dap)
     program = 'bundle';
     programArgs = {'exec', 'rackup'};
     useBundler = true;
-    port = 38698,
-    server = "127.0.0.1",
+    connect = function()
+      local server = vim.fn.input('Server [127.0.0.1]: ')
+      server = server ~= '' and Server or '127.0.0.1'
+      local port = tonumber(vim.fn.input('Port [38698]: ')) or 38698
+      return { server = server, port = port }
+    end;
     options = {
       source_filetype = 'ruby';
     },
@@ -377,8 +421,12 @@ local function setup_rdbg_configuration(dap)
     program = 'bundle';
     programArgs = {'exec', 'rackup'};
     useBundler = true;
-    port = 38698,
-    server = "127.0.0.1",
+    connect = function()
+      local server = vim.fn.input('Server [127.0.0.1]: ')
+      server = server ~= '' and Server or '127.0.0.1'
+      local port = tonumber(vim.fn.input('Port [38698]: ')) or 38698
+      return { server = server, port = port }
+    end;
     options = {
       source_filetype = 'ruby';
     },
@@ -391,8 +439,12 @@ local function setup_rdbg_configuration(dap)
     request = 'attach',
     command = 'ruby',
     script = "${file}",
-    port = 38698,
-    server = '0.0.0.0',
+    connect = function()
+      local server = vim.fn.input('Server [0.0.0.0]: ')
+      server = server ~= '' and Server or '0.0.0.0'
+      local port = tonumber(vim.fn.input('Port [38698]: ')) or 38698
+      return { server = server, port = port }
+    end;
     options = {
      source_filetype = 'ruby';
     },
