@@ -417,8 +417,8 @@ function M.setup(opts)
   local dap = load_module("dap")
   setup_rdbg_adapter(dap, config)
   setup_rdbg_configuration(dap, config)
-  local port_number = vim.fn.input('Port [38698]')
-  local server = vim.fn.input('Host [127.0.0.1/0.0.0.0]')
+  local port_number = vim.fn.input('Cross Project Using Port [38698]')
+  local server = vim.fn.input('Cross Project Using Host [127.0.0.1/0.0.0.0]')
 end
 
 return M
