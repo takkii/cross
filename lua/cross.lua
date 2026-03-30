@@ -124,17 +124,7 @@ local function setup_rdbg_adapter(dap)
 
     -- Settings for each environment with a different OS.
     if vim.fn.has('win32') == 1 or vim.fn.has('win64') == 1 then
-        -- Windows and WSL2
-      home = os.getenv("HOME")
-      if vim.fn.isdirectory(home .. '/.rbenv') == 1 then
-        rdbg = home .. '/.rbenv/shims/rdbg'
-      elseif vim.fn.isdirectory(home .. '/.anyenv') == 1 then
-        rdbg = home .. '/.anyenv/envs/rbenv/shims/rdbg'
-      elseif vim.fn.isdirectory('/usr/local/bin') == 1 then
-        rdbg = '/usr/local/bin/rdbg'
-      else
-        rdbg = 'rdbg.bat'
-      end
+      rdbg = 'rdbg.bat'
     elseif vim.fn.has('osxdarwin') == 1 or vim.fn.has('osx') == 1 then
       -- MacOS
       home = os.getenv("HOME")
@@ -384,21 +374,7 @@ local function setup_rdbg_configuration(dap)
     },
     localfs = true,
     waiting = 1000,
-  },
-  {
-    type = 'ruby',
-    name = 'wsl2 run current file',
-    request = 'attach',
-    command = 'ruby',
-    script = "${file}",
-    port = 38698,
-    server = '0.0.0.0',
-    options = {
-     source_filetype = 'ruby';
-    },
-    localfs = true,
-    waiting = 1000,
-  },
+  }
 }
 
   if configs == nil or configs.dap_configurations == nil then
