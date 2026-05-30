@@ -1,7 +1,8 @@
 *cross*
 
-version: 2026/03/13
-Author: Takayuki Kamiyama <karuma.reason@gmail.com>
+version: 2026/05/30
+Author: Takayuki Kamiyama
+mail: karuma.reason@gmail.com
 License: MIT
 
 ==============================================================================
@@ -108,5 +109,20 @@ The condition is that cross/command.vim is applied as source.
 
 " No UI, interactive
 :RPOpen
+
+==============================================================================
+
+1. run current file
+2. run current file:use rdbg
+3. run rake ※ Set the task to be the default.
+4. run current rspec file
+5. run current rspec file:current line
+6. run rspec
+7. run rails:use readapt
+8. run rails:use rdbg
+9. run sinatra
+10. run sinatra:use rdbg
+11. run sinatra:use readapt
+12. run sinatra:use readapt and rdbg
 
 ==============================================================================
